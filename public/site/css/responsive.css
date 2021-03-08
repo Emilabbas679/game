@@ -1,0 +1,106 @@
+/* --- Desctop media */
+@media only screen and (min-width: 1200px) {
+
+}
+
+  
+/* iPads (portrait and landscape2) ----------- */
+@media only screen and (min-width : 1024px) and (max-width : 1199px) {
+
+
+}
+  
+/* iPads (portrait and landscape2) ----------- */
+@media only screen and (min-width : 768px) and (max-width : 1024px) {
+    div.start-part {
+        width: 65%;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    /* div.start-text {
+        font-size: 16px;
+        line-height: 1.2;
+    } */
+
+    
+div.start-click a.str-btn {
+    display: flex;
+    width: auto;
+    /* min-height: 50px; */
+    /* font-size: 28px; */
+    padding: 10px 20px;
+}
+
+}
+
+/* iPads (portrait and landscape2) ----------- */
+@media only screen and (min-width : 561px) and (max-width : 768px) {
+    div.start-part {
+        width: 96%;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    div.start-text {
+        font-size: 16px;
+        line-height: 1.2;
+    }
+
+    
+div.start-click a.str-btn {
+    display: flex;
+    width: 100%;
+    min-height: 50px;
+    font-size: 28px;
+    padding: 8px 15px;
+}
+
+}
+
+/* iPads (portrait and landscape2) ----------- */
+@media only screen and (min-width : 0px) and (max-width : 560px) {
+    div.start-part {
+        width: 100%;
+        padding: 0 15px;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    div.start-text {
+        font-size: 15px;
+        line-height: 1.2;
+    }
+    
+    div.start-click a.str-btn {
+        display: flex;
+        width: 100%;
+        min-height: 50px;
+        font-size: 24px;
+        padding: 8px 15px;
+    }
+
+    div.test-part {
+        width: 100%;
+        padding: 0 15px;
+    }
+    div.share-part {
+        width: 100%;
+        padding: 0 15px;
+    }
+
+    div.result_table th, div.result_table td {
+        font-size: 16px;
+    }
+
+    .partnyor_result {
+        padding: 15px 0;
+        font-size: 22px;
+        color: #ff2300;
+        max-width: 100%;
+        padding: 15px;
+        margin: 15px auto;
+    }
+
+}
+  
