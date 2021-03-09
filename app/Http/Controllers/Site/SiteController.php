@@ -28,7 +28,7 @@ class SiteController extends Controller
 
     public function result($slug)
     {
-        $history = QuestionHistory::where('slug', $slug)->first();
+        $history = QuestionHistory::where('slug', $slug)->where('referral_id', 0)->first();
         if (!$history)
             abort(404);
         $results = QuestionHistory::where('referral_id', $history->id)->get();

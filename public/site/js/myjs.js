@@ -4,35 +4,25 @@ function copyFunction() {
 	copyText.setSelectionRange(0, 99999)
 	document.execCommand("copy");
   }
+  
+    $("#scroll-div").submit(function(e){
+		$($('.slt').not('.selected').get().reverse()).each(function() {
+		 
+			swiper.slideTo($(this).index()); 
+			if($(this).index() >= 0) {
+			e.preventDefault();
+			}
+		});
+        
+    });
+ 
 
-	
-  $(document).ready(function () {
-
-	var tst_cnt = $("div.swiper-slide").index();
-	// alert(tst_cnt);
-	$("div#tst").first().addClass("swiper-slide-active");
-
-	$('div.test-rows input').click(function() {
-		$("div#tst").removeClass("swiper-slide-active");
-		$(this).nextEl();
-		
-		var adcls = $(this).parent("div.row_in").parent("div.row-frm").parent("div.test-rows").parent("div.swiper-slide").next().addClass("swiper-slide-active");
-		tst_cnt = tst_cnt + 1;
-		
-		if(tst_cnt<10){
-			
-			$('html, body').animate({
-			scrollTop: $(adcls).offset().top
-			}, 1000)
-			
-		}else {
-			return true;
+	$("#start_form").submit(function(e){
+        var strt_input = $("#start_iput").val();
+		if(strt_input == "") {
+			e.preventDefault();
 		}
-		
-  	})
-
-
-  });
+    });
 
 
 
@@ -41,14 +31,13 @@ $(window).on('beforeunload', function(){
 });
 
 
-
 var swiper = new Swiper('.swiper-container', {
 
 	direction: 'vertical',
 	mousewheelControl: false,
 	mousewheel: false,
 	speed: 1000,
-	// animationTime: 4000,
+	// allowTouchMove: false,
 	slidesPerView: 1,
 	navigation: {
         nextEl: '.swiper-button-next',
@@ -58,8 +47,6 @@ var swiper = new Swiper('.swiper-container', {
 	  enabled: false,
 	  onlyInViewport: false,
 	},
-	// freeMode: true,
-	// freeModeSticky: true,
   });
   
   window.addEventListener('wheel', function (e) {
@@ -71,3 +58,16 @@ var swiper = new Swiper('.swiper-container', {
 	  swiper.slidePrev()
 	}
   })
+
+
+  $(document).ready(function () {
+
+
+	$('div.test-rows input').click(function() {
+		$(this).parents('.swiper-slide').addClass('selected');
+		setTimeout(function(){  swiper.slideTo(swiper.clickedIndex + 1);}, 500);
+		console.log( swiper.realIndex); 
+		
+	})
+});
+

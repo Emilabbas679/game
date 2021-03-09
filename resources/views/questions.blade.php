@@ -13,8 +13,9 @@
             <div class="swiper-container">
                 <div class="swiper-wrapper">
                     @foreach($questions as $q)
-                        <input type="hidden" name="questions[]" value="{{$q->id}}">
-                        <div id="tst_{{$loop->iteration}}" class="swiper-slide @if($loop->iteration == 1) test_count @endif">
+                        
+                        <div id="tst_{{$loop->iteration}}" class="slt swiper-slide @if($loop->iteration == 1) test_count @endif">
+                            <input type="hidden" name="questions[]" value="{{$q->id}}">
                             <div class="test-rows  clearfix">
                                 <div class="row-frm clearfix">
                                     <h2 class="frm_questn">{{$loop->iteration}}. @if($type == 'create') {{$q->question_own}} @else {{$q->question}} @endif</h2>

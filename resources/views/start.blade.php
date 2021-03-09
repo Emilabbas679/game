@@ -25,9 +25,9 @@
                 </h1>
             </div>
             <div class="start-click clearfix">
-                <form @if($type == 'create') action="{{route('start_post')}}" @else action="{{route('startCompetitionPost', $slug)}}" @endif method="post">
+                <form @if($type == 'create') action="{{route('start_post')}}" @else action="{{route('startCompetitionPost', $slug)}}" @endif method="post"  id="start_form" >
                     @csrf
-                    <input type="text" name="name" value="" placeholder="Adınız... ">
+                    <input type="text" name="name" value="" placeholder="Adınız... "  id="start_iput">
                     @if ($type == 'create')
                     <input type="hidden" name="type" value="create">
                     @else

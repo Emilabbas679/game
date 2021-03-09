@@ -16,7 +16,7 @@ class QuestionHistoryController extends Controller
      */
     public function index()
     {
-        $items = QuestionHistory::where('referral_id', 0)->get();
+        $items = QuestionHistory::where('referral_id', 0)->orderby('id','desc')->get();
         return view('admin.history.index', compact('items'));
     }
 
