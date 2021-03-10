@@ -20,6 +20,7 @@ Route::get('/referral/{slug}/start', [Site::class, 'startCompetition'])->name('s
 Route::post('/referral/{slug}/questions', [Site::class, 'startCompetitionPost'])->name('startCompetitionPost');
 Route::post('/referral/{slug}/post', [Site::class, 'competitionResult'])->name('competitionResult');
 Route::get('/result/{slug}', [Site::class, 'result'])->name('result');
+Route::get('/result/{slug}/compose/{new_slug}', [Site::class, 'resultCompose'])->name('result_compose');
 Route::get('/share/{slug}/{type?}', [Site::class, 'share'])->name('share');
 Route::post('/', [Site::class, 'startPost'])->name('start_post');
 Route::post('/create-competition', [Site::class, 'createCompetition'])->name('create_competition');

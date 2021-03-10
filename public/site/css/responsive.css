@@ -36,8 +36,24 @@ div.start-click a.str-btn {
 
 /* iPads (portrait and landscape2) ----------- */
 @media only screen and (min-width : 561px) and (max-width : 768px) {
+
+    
+div.app::before {
+    width: 150px;
+    height: 250px;
+    right: -50px;
+    top: 10px;
+}
+div.app::after {
+    width: 200px;
+    height: 250px;
+    left: 30px;
+    bottom: -85px;
+}
+
+
     div.start-part {
-        width: 96%;
+        width: 90%;
         max-width: 100%;
         margin: 0 auto;
     }
@@ -56,10 +72,74 @@ div.start-click a.str-btn {
     padding: 8px 15px;
 }
 
+.reload_btn {
+    min-width: 100%;
+    min-height: 50px;
+    font-size: 26px;
+    padding: 15px;
+    margin: 30px auto 0 auto;
+}
+
+
+div.share-part {
+    width: 90% !important;
+    margin: 0 auto;
+}
+
+.partnyor_result {
+    width: 100%;
+    max-width: 90%;
+    padding: 15px 0;
+    font-size: 45px;
+    margin: 0 auto 145px auto;
+}
+
+.rslt_mrg {
+    margin: 0px auto 30px auto;
+}
+
+div.result_range {
+    height: 50px;
+    border-radius: 7px;
+}
+
+div.result_range_in {
+    height: 50px;
+    border-radius: 7px;
+}
+
+div.result_heart {
+    display: inline-flex;
+    align-items: center;
+    position: absolute;
+    justify-content: center;
+    width: 120px;
+    height: 120px;
+    font-size: 30px;
+    top: -130px;
+    left: calc(100% - 40px);
+}
+
+
+
 }
 
 /* iPads (portrait and landscape2) ----------- */
 @media only screen and (min-width : 0px) and (max-width : 560px) {
+    div.app::before {
+        width: 110px;
+        height: 120px;
+        right: -35px;
+        top: 15px;
+    }
+    div.app::after {
+        left: 20px;
+        bottom: -30px;
+        width: 110px;
+        height: 120px;
+    }
+
+    
     div.start-part {
         width: 100%;
         padding: 0 15px;
@@ -68,8 +148,9 @@ div.start-click a.str-btn {
     }
 
     div.start-text {
-        font-size: 15px;
-        line-height: 1.2;
+        position: relative;
+        margin: 0 auto 30px auto;
+        z-index: 1;
     }
     
     div.start-click a.str-btn {
@@ -93,14 +174,150 @@ div.start-click a.str-btn {
         font-size: 16px;
     }
 
-    .partnyor_result {
+    div.partnyor_result {
         padding: 15px 0;
         font-size: 22px;
-        color: #ff2300;
+        max-width: 100%;
+        /* color: #ff2300; */
         max-width: 100%;
         padding: 15px;
         margin: 15px auto;
     }
+
+  
+
+    div.start-text h1 {
+        font-size: 30px;
+        margin: 0 auto 15px auto;
+    }
+
+    div.start-text div.start-text_info {
+        font-size: 30px;
+    }
+
+    div.start-click form input {
+        height: 50px;
+        padding: 15px;
+        margin: 0 auto 20px auto;
+        font-size: 20px;
+        border-radius: 7px;
+    }
+
+    div.start-click .str-btn {
+        min-height: 50px;
+        font-size: 20px;
+        border-radius: 4px;
+        padding: 15px;
+    }
+
+    div.row-frm h2.frm_questn {
+        margin: 0px auto 20px auto;
+        font-size: 30px;
+    }
+
+    div.row-frm input {
+        height: 50px;
+        padding: 15px;
+        font-size: 20px;
+        border-radius: 4px;
+    }
+
+    div.row-frm label.test_label {
+        height: 50px;
+        margin: 0 auto 15px auto;
+        height: 50px;
+        padding: 15px;
+        margin: 0 auto 15px auto;
+        font-size: 20px;
+        border-radius: 4px;
+    }
+
+    span.test_info {
+        margin-right: 10px;
+        width: 100%;
+        padding: 15px;
+        font-size: 20px;
+    }
+
+    span.test_icn {
+        position: absolute;
+        width: 25px;
+        height: 20px;
+        right: 10px;
+        top: 12px;
+    }
+
+    div.scrl_btn {
+        bottom: 20px;
+        right: 20px;
+    }
+
+    
+div.scrl_btn .swiper-button-prev {
+    width: 40px;
+    height: 40px;
+    background-size: 60% 60%;
+}
+
+div.scrl_btn .swiper-button-next {
+    width: 40px;
+    height: 40px;
+    background-size: 60% 60%;
+}
+
+
+.reload_btn {
+    min-width: 100%;
+    min-height: 50px;
+    font-size: 26px;
+    padding: 15px;
+    margin: 30px auto 0 auto;
+}
+
+
+
+
+div.share-part {
+    width: 90% !important;
+    margin: 0 auto;
+}
+
+.partnyor_result {
+    width: 100%;
+    max-width: 90%;
+    padding: 15px 0;
+    font-size: 30px;
+    margin: 0px auto 160px auto;
+}
+
+.rslt_mrg {
+    margin: 0px auto 20px auto;
+}
+
+div.result_range {
+    height: 50px;
+    border-radius: 7px;
+}
+
+div.result_range_in {
+    height: 50px;
+    border-radius: 7px;
+}
+
+div.result_heart {
+    display: inline-flex;
+    align-items: center;
+    position: absolute;
+    justify-content: center;
+    width: 90px;
+    height: 90px;
+    font-size: 24px;
+    top: -100px;
+    left: calc(100% - 30px);
+    padding: 15px 15px 25px 15px;
+}
+
+
 
 }
   

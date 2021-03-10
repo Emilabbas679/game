@@ -13,18 +13,18 @@
             <div class="swiper-container">
                 <div class="swiper-wrapper">
                     @foreach($questions as $q)
-                        
+
                         <div id="tst_{{$loop->iteration}}" class="slt swiper-slide @if($loop->iteration == 1) test_count @endif">
                             <input type="hidden" name="questions[]" value="{{$q->id}}">
                             <div class="test-rows  clearfix">
                                 <div class="row-frm clearfix">
-                                    <h2 class="frm_questn">{{$loop->iteration}}. @if($type == 'create') {{$q->question_own}} @else {{$q->question}} @endif</h2>
+                                    <h2 class="frm_questn"> @if($type == 'create')  {{ str_replace('i','İ', $q->question_own)}}@else {{str_replace('i','İ', $q->question)}} @endif</h2>
                                     @foreach($q->answers as $a)
                                     <div class="row_in clearfix">
-                                        <input type="radio" id="{{$q->id}}-{{$loop->iteration}}" name="answer[{{$q->id}}]" value="{{$a->id}}">
+                                        <input type="radio" id="{{$q->id}}-{{$loop->iteration}}" name="answer[{{$q->id}}]" value="{{$a->id}}" @if(old('answer['.$q->id.']')) checked @endif>
                                         <label for="{{$q->id}}-{{$loop->iteration}}" class="test_label">
                                             <span class="test_variant">@if($loop->iteration == 1) A @elseif($loop->iteration == 2) B @elseif($loop->iteration == 3) C @else D @endif </span>
-                                            <span class="test_info">{{$a->answer}} </span>
+                                            <span class="test_info">{{str_replace('i','İ', $a->answer)}} </span>
                                             <span class="test_icn"></span>
                                         </label>
                                     </div>

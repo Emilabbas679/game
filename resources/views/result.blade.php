@@ -3,7 +3,7 @@
 @section('content')
     <div class="full_body clearfix">
         <div class="share-part clearfix">
-            <h1 class="partnyor_result">{{$history->name}}'in sorğusuna cavab verənlər. </h1>
+            <h1 class="partnyor_result rslt_mrg">{{str_replace('i','İ', $history->name)}}'İn sorğusuna cavab verənlər. </h1>
             <div class="result_table clearfix">
 
                 <table>

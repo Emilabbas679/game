@@ -16,64 +16,112 @@
 
 
 @font-face {
-    font-family: Inter-Regular;
-    src: url(../fonts/Inter-Regular.otf);
+    font-family: 'Gotham';
+    src: url('../fonts/subset-Gotham-Bold.eot');
+    src: url('../fonts/subset-Gotham-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/subset-Gotham-Bold.woff2') format('woff2'),
+        url('../fonts/subset-Gotham-Bold.woff') format('woff'),
+        url('../fonts/subset-Gotham-Bold.ttf') format('truetype'),
+        url('../fonts/subset-Gotham-Bold.svg#Gotham-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-    font-family: Inter-Bold;
-    src: url(../fonts/Inter-Bold.otf);
-}
-@font-face {
-    font-family: Inter-Medium;
-    src: url(../fonts/Inter-Medium.otf);
+    font-family: 'Gotham';
+    src: url('../fonts/subset-Gotham-Light.eot');
+    src: url('../fonts/subset-Gotham-Light.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/subset-Gotham-Light.woff2') format('woff2'),
+        url('../fonts/subset-Gotham-Light.woff') format('woff'),
+        url('../fonts/subset-Gotham-Light.ttf') format('truetype'),
+        url('../fonts/subset-Gotham-Light.svg#Gotham-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
 }
 
-body {
-    /* transform: translate3d(0px, 0px, 0px); */
-    /* transition: all 700ms ease; */
-    /* position: relative; */
-}
 body, html{
     height:100%;
   }
 
+body {
+    font-family: 'Gotham', Arial, Tahoma, sans-serif;
+    background-image: url("../img/body_bg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-transform: uppercase;
+    height: 100% !important;
+    overflow: hidden !important;
+}
+
+
+
 div.app {
     display: block;
+    position: relative;
     margin: 0;
     padding: 0;
     width: 100%;
+    height: 100%;
     overflow: hidden;
-    /* overflow-x: hidden;
+      /* overflow-x: hidden;
     overflow-y: auto; */
+
+/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ad0018+0,63000d+100&0.75+0,0.75+100 */
+background: -moz-linear-gradient(top,  rgba(173,0,24,0.75) 0%, rgba(99,0,13,0.75) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(173,0,24,0.75) 0%,rgba(99,0,13,0.75) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(173,0,24,0.75) 0%,rgba(99,0,13,0.75) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bfad0018', endColorstr='#bf63000d',GradientType=0 ); /* IE6-9 */
+  
 }
 
 
-/* .app{
-    background: linear-gradient(135deg, #e37171, #ee9292);
-    background-size: 400% 400%;
-    -webkit-animation: AnimationName 30s ease infinite;
-    -moz-animation: AnimationName 30s ease infinite;
-    animation: AnimationName 30s ease infinite;
+div.app::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 225px;
+    height: 330px;
+    background-image: url("../img/apple_top.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x: 0;
+    background-position-y: 0;
+    right: -65px;
+    top: 30px;
+    -moz-transform: rotate(-20deg);
+    -webkit-transform: rotate(-20deg);
+    -o-transform: rotate(-20deg);
+    -ms-transform: rotate(-20deg);
+    transform: rotate(-20deg);
+}
+div.app::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 225px;
+    height: 330px;
+    background-image: url("../img/apple_btm.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x: 0;
+    background-position-y: 0;
+    left: 25px;
+    bottom: -120px;
+    -moz-transform: rotate(20deg);
+    -webkit-transform: rotate(20deg);
+    -o-transform: rotate(20deg);
+    -ms-transform: rotate(20deg);
+    transform: rotate(20deg);
 }
 
-@-webkit-keyframes AnimationName {
-    0%{background-position:0% 9%}
-    50%{background-position:100% 92%}
-    100%{background-position:0% 9%}
-}
-@-moz-keyframes AnimationName {
-    0%{background-position:0% 9%}
-    50%{background-position:100% 92%}
-    100%{background-position:0% 9%}
-}
-@keyframes AnimationName {
-    0%{background-position:0% 9%}
-    50%{background-position:100% 92%}
-    100%{background-position:0% 9%}
-}
- */
 
+ main {
+     width: 100%;
+     height: 100%;
+ }
 
 div.full_body {
     display: flex;
@@ -82,7 +130,7 @@ div.full_body {
     margin: 0;
     padding: 0;
     width: 100%;
-    height: 100vh;
+    height: 100%;
 }
 
 div.start-part {
@@ -95,12 +143,35 @@ div.start-part {
 
 div.start-text {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     width: 100%;
-    font-family: Inter-Regular;
-    font-size: 20px;
+    margin: 0 auto 100px auto;
+}
+
+div.start-text h1 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-weight: bold;
+    font-size: 60px;
     text-align: center;
+    text-transform: uppercase;
     line-height: 1.2;
-    color: #000;
+    color: #fff;
+    margin: 0 auto 35px auto;
+}
+
+div.start-text div.start-text_info {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-weight: 300;
+    font-size: 60px;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 1.2;
+    color: #fff;
 }
 
 div.start-click {
@@ -112,82 +183,80 @@ div.start-click {
 
 div.start-click form {
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
+    position: relative;
     justify-content: center;
 }
 
 div.start-click form input{
     display: flex;
-    float: left;
-    width: calc(100% - 160px);
-    padding: 10px 15px;
+    float: none;
+    width: 100%;
+    height: 85px;
+    padding: 20px;
+    margin: 0 auto 70px auto;
     align-items: center;
-    /* justify-content: flex-start; */
-    font-family: Inter-Regular;
-    font-size: 18px;
-    text-align: left;
-    line-height: 1.2;
+    font-family: 'Gotham';
+    font-weight: 300;
+    font-size: 30px;
+    text-transform: capitalize;
+    text-align: center;
     color: #000;
+    background-color: #fff;
     outline: none;
-    border: 1px solid rgb(255, 0, 29);
-    border-radius: 4px;
+    border: none;
+    border-radius: 7px;
 }
-
 
 div.start-click .str-btn:hover {
-    background-color: #ab0013;
+    -webkit-box-shadow:inset 0 0 15px 10px #63000D;
+    box-shadow:inset 0 0 15px 10px #63000D;
 }
+
 
 div.start-click .str-btn {
     display: flex;
-    width: 160px;
-    min-height: 50px;
+    width: 100%;
+    min-height: 85px;
     align-items: center;
     justify-content: center;
-    font-family: Inter-Bold;
-    font-size: 28px;
+    font-family: 'Gotham';
+    font-weight: bold;
+    font-size: 30px;
+    text-transform: uppercase;
     text-align: center;
     line-height: 1.2;
     color: #000;
     text-decoration: none;
-    border-radius: 4px;
-    border: 1px solid transparent;
-    box-shadow: rgb(0 0 0 / 10%) 0px 3px 12px 0px;
+    border-radius: 7px;
+    border: none;
     padding: 8px 18px;
-    background-color: rgb(255, 0, 29);
-    color: #fff;
+    background-color: #fff;
     outline: none;
     cursor: pointer;
     -webkit-transition: all 0.5s ease-in-out;
--moz-transition: all 0.5s ease-in-out;
--ms-transition: all 0.5s ease-in-out;
--o-transition: all 0.5s ease-in-out;
-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
 
 button.result_send:hover {
     background-color: #ab0013;
-}
+    color: #fff;
+    -webkit-box-shadow:inset 0 0 15px 10px #63000D;
+box-shadow:inset 0 0 15px 10px #63000D;
+} 
+
+
 button.result_send {
     display: flex;
-    float: left;
-    width: 150px;
-    min-height: 40px;
+    float: none;
     align-items: center;
     justify-content: center;
-    font-family: Inter-Bold;
-    font-size: 22px;
-    text-align: center;
-    line-height: 1.2;
-    color: #000;
     text-decoration: none;
-    border-radius: 4px;
-    border: 1px solid transparent;
-    box-shadow: rgb(0 0 0 / 10%) 0px 3px 12px 0px;
-    padding: 8px 18px;
-    margin: 20px 0 0 0;
-    background-color: rgb(255, 0, 29);
-    color: #fff;
+    margin: 30px auto 0 auto;
     cursor: pointer;
     outline: none;
     -webkit-transition: all 0.5s ease-in-out;
@@ -195,6 +264,23 @@ button.result_send {
 -ms-transition: all 0.5s ease-in-out;
 -o-transition: all 0.5s ease-in-out;
 transition: all 0.5s ease-in-out;
+
+width: 75%;
+    height: 85px;
+    padding: 15px 20px;
+    /* margin: 0 auto 70px auto; */
+    align-items: center;
+    font-family: 'Gotham';
+    font-weight: bold;
+    font-size: 30px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #000;
+    background: none;
+    outline: none;
+    border: none;
+    border-radius: 7px;
+    background-color: #fff;
 }
 
 /* =====>>> TEST PAGE START  <<<===== */
@@ -205,7 +291,7 @@ div.test-part {
     align-items: center;
     justify-content: center;
     margin: 0 auto;
-    width: 60%;
+    width: 70%;
     
 }
 
@@ -230,28 +316,37 @@ div.row-frm {
 div.row-frm h2.frm_questn {
     display: block;
     width: 100%;
-    margin: 0px auto 20px auto;
+    margin: 0px auto 35px auto;
     text-align: left;
+    font-weight: bold;
+    font-size: 42px;
+    text-align: center;
+    color: #fff;
+
 }
+
 div.row_in {
     display: block;
-    width: 100%;
+    width: 90%;
     position: relative;
-    padding: 0 0 0 20px;
+    padding: 0;
+    margin: 0 auto;
 }
 
 div.row_in input[type="radio"]:checked + label {
-    border-color: #FF2300;
+    -webkit-box-shadow:inset 0 0 15px 10px #63000D;
+box-shadow:inset 0 0 15px 10px #63000D;
+    /* border-color: rgba(99,0,13,0.75); */
     /* color: yellow; */
 } 
 
-div.row_in input[type="radio"]:checked + label {
-    border-color: #FF2300;
-} 
+/* div.row_in input[type="radio"]:checked + label {
+    border-color: rgba(99,0,13,0.75);
+}  */
 
 div.row_in input[type="radio"]:checked + label span.test_variant {
-    background-color: #FF2300;
-    color: #fff;
+    /* background-color: #FF2300;
+    color: #fff; */
 } 
 
 div.row_in input[type="radio"]:checked + label span.test_icn {
@@ -262,37 +357,36 @@ div.row_in input[type="radio"]:checked + label span.test_icn {
 
 div.row-frm input {
     display: block;
-    width: 100%;
-    height: 46px;
     -moz-appearance: none;
     -webkit-appearance: none;
     appearance: none;
-    outline: none;
-    border: none;
-    background: transparent;
     position: absolute;
     left: 0;
     top: 0;
     margin: 0;
     z-index: 99;
     cursor: pointer;
-}
 
-span.test_variant {
-    display: flex;
+    width: 100%;
+    height: 60px;
+    padding: 20px;
+    /* margin: 0 auto 70px auto; */
     align-items: center;
-    justify-content: center;
-    float: left;
-    width: 30px;
-    height: 30px;
-    margin-right: 10px;
-    font-family: Inter-Regular;
-    font-size: 20px;
-    color: rgb(255, 35, 0);
+    font-family: 'Gotham';
+    font-weight: 300;
+    font-size: 30px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #000;
+    background: none;
+    outline: none;
+    border: none;
+    border-radius: 7px;
 }
 
+
 span.test_variant {
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     float: left;
@@ -305,20 +399,32 @@ span.test_variant {
     border: 1px solid #FF2300;
     color: #FF2300;
     background-color: #fff;
+
+    
 }
 
 span.test_info {
     display: flex;
     align-items: center;
-    /* justify-content: center; */
+    justify-content: center;
     float: left;
-    width: calc(100% - 75px);
-    text-align: left;
     margin-right: 10px;
-    font-family: Inter-Regular;
-    font-size: 18px;
-    color: #FF2300;
+
+    width: calc(100% - 75px);
+    /* height: 85px; */
+    padding: 20px;
+    align-items: center;
+    font-family: 'Gotham';
+    font-weight: 300;
+    font-size: 30px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #000;
+    /* background-color: #fff; */
+    outline: none;
+    border: none;
 }
+
 span.test_icn {
     display: flex;
     visibility: hidden;
@@ -439,44 +545,49 @@ a.fb:hover, a.twt:hover, a.wp:hover, a.tg:hover {
 
 .reload_btn:hover {
     background-color: #ab0013;
-}
+    color: #fff;
+    -webkit-box-shadow:inset 0 0 15px 10px #63000D;
+box-shadow:inset 0 0 15px 10px #63000D;
+} 
 .reload_btn {
     display: flex;
     float: left;
-    width: 200px;
+    min-width: 55%;
     min-height: 50px;
     align-items: center;
     justify-content: center;
-    font-family: Inter-Bold;
-    font-size: 24px;
+    font-family: 'Gotham';
+    font-weight: bold;
+    font-size: 26px;
     text-align: center;
+    text-transform: uppercase;
     line-height: 1.2;
     color: #000;
     text-decoration: none;
     border-radius: 4px;
     border: 1px solid transparent;
-    box-shadow: rgb(0 0 0 / 10%) 0px 3px 12px 0px;
-    padding: 8px 18px;
+    padding: 20px 15px;
     margin: 30px 0 0 0;
-    background-color: rgb(255, 0, 29);
-    color: #fff;
+    background-color: #fff;
+    color: #000;
     cursor: pointer;
     outline: none;
     -webkit-transition: all 0.5s ease-in-out;
--moz-transition: all 0.5s ease-in-out;
--ms-transition: all 0.5s ease-in-out;
--o-transition: all 0.5s ease-in-out;
-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
+
 
 
 
 
 div.scrl_btn {
     position: fixed;
-    width: 60px;
-    height: 40px;
-    bottom: 50px;
+    width: auto;
+    height: auto;
+    bottom: 30px;
     right: 50px;
     z-index:999;
 }
@@ -487,17 +598,23 @@ div.scrl_btn .swiper-button-prev {
     left: auto;
     right: 0;
     margin: 0;
-    width: 30px;
-    height: 30px;
+    width: 80px;
+    height: 80px;
     background-image: url("../img/up.svg");
     background-position: center;
-    background-size: 20px 20px;
+    background-size: 60% 60%;
     background-repeat: no-repeat;
-    background-color: #ff2300;
-    border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;
+    background-color: #ed2224;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
     border: none;
     outline: none;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 div.scrl_btn .swiper-button-next {
@@ -506,18 +623,30 @@ div.scrl_btn .swiper-button-next {
     left: 0;
     right: auto;
     margin: 0;
-    width: 30px;
-    height: 30px;
+    width: 80px;
+    height: 80px;
     background-image: url("../img/down.svg");
     background-position: center;
-    background-size: 20px 20px;
+    background-size: 60% 60%;
     background-repeat: no-repeat;
-    background-color: #ff2300;
-    border-top-left-radius: 3px;
-    border-bottom-left-radius: 3px;
+    background-color: #ed2224;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
     border: none;
     outline: none;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
+
+div.scrl_btn .swiper-button-next:hover, div.scrl_btn .swiper-button-prev:hover {
+    -webkit-box-shadow:inset 0 0 15px 10px #63000D;
+    box-shadow:inset 0 0 15px 10px #63000D;
+}
+
 
 
 div.result_table {
@@ -525,9 +654,9 @@ div.result_table {
     flex-wrap: wrap;
     width: 100%;
     height: auto;
-    max-height: 70vh;
-    margin: 25px auto 50px auto;
-    overflow: auto;
+    /* max-height: 70vh; */
+    margin: 25px auto 45px auto;
+    /* overflow: auto; */
     position: relative;
 }
 
@@ -542,8 +671,9 @@ div.result_table th, div.result_table td {
     border: none;
     text-align: left;
     padding: 15px;
-    font-family: Inter-Medium;
-    font-size: 18px;
+    font-family: 'Gotham';
+    font-weight: 300;
+    font-size: 20px;
     /* color: #ff2300; */
     text-align: center;
 }
@@ -557,15 +687,21 @@ div.result_table table tr:nth-child(odd){background-color: rgb(241, 241, 241); c
     /* position: fixed; */
     top: 0;
     width: 100%;
-    max-width: 61%;
+    max-width: 100%;
     padding: 15px 0;
-    font-family: Inter-Medium;
-    font-size: 24px;
-    color: #ff2300;
+    font-family: 'Gotham';
+    font-weight: bold;
+    font-size: 50px;
+    color: #fff;
     text-align: center;
-    margin: 20px auto;
+    text-transform: uppercase;
+    margin: 0px auto 200px auto;
+    line-height: 1.2;
 }
 
+.rslt_mrg {
+    margin: 0px auto 70px auto;
+}
 
   .swiper-container,
   .swiper-wrapper,
@@ -578,7 +714,7 @@ div.result_table table tr:nth-child(odd){background-color: rgb(241, 241, 241); c
        height: 100%;
      text-align: center;
      font-size: 18px;
-     background: #fff;
+     background: none;
      /* Center slide text vertically */
      display: flex;
      justify-content: center;
@@ -589,15 +725,25 @@ div.result_table table tr:nth-child(odd){background-color: rgb(241, 241, 241); c
   div.row-frm label.test_label{
     display: flex;
     position: relative;
-    width: 100%;
-    height: 46px;
     align-items: center;
-    padding: 8px 10px;
-    margin: 0 auto 15px auto;
-    border-radius: 4px;
-    border: 2px solid transparent;
-    background-color: rgba(255, 35, 0, 0.1);
     z-index: 9;
+
+    width: 100%;
+    height: 60px;
+    padding: 20px;
+    margin: 0 auto 40px auto;
+    align-items: center;
+    font-family: 'Gotham';
+    font-weight: 300;
+    font-size: 30px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #000;
+    background-color: #fff;
+    outline: none;
+    border: none;
+    border-radius: 7px;
+    transition: all 0.4s;
 }
 
 label.swiper-button-next {
@@ -612,4 +758,90 @@ label.swiper-button-next.swiper-button-disabled {
 } */
 
 
+div.result_range {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 85px;
+    background-color: #fff;
+    border-radius: 7px;
+    -webkit-box-shadow: 0 0 10px 0 #000000;
+box-shadow: 0 0 10px 0 #000000;
+}
+
+div.result_range_in {
+    display: block;
+    position: relative;
+    height: 85px;
+    border-radius: 7px;
+
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#510101+0,ff0000+100 */
+background: rgb(81,1,1); /* Old browsers */
+background: -moz-linear-gradient(left,  rgba(81,1,1,1) 0%, rgba(255,0,0,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  rgba(81,1,1,1) 0%,rgba(255,0,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  rgba(81,1,1,1) 0%,rgba(255,0,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#510101', endColorstr='#ff0000',GradientType=1 ); /* IE6-9 */
+
+}
+
+div.result_heart {
+    display: inline-flex;
+    align-items: center;
+    position: absolute;
+    justify-content: center;
+    width: 175px;
+    height: 175px;
+    background-color: transparent;
+    background-image: url(../img/heart.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: -185px;
+    left: calc(100% - 60px);
+    transform: rotate(20deg);
+    font-family: 'Gotham';
+    font-weight: bold;
+    font-size: 50px;
+    color: #940014;
+    padding: 15px 15px 38px 15px;
+}
+
+div.fill_area {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #63000D;
+    font-family: 'Gotham';
+    font-weight: bold;
+    font-size: 16px;
+    text-transform: none;
+    top: -51px;
+    transition: all 0.3s;
+    animation: animation-text 2s infinite;
+}
+
+div.fill_area::after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 17px solid #fff;
+    top: 35px;
+    left: 2px;
+}
+
+@keyframes animation-text {
+    0%{color:#63000D;}
+    50%{color:#fff;}
+    100%{color:#63000D;}
+
+}
 /* =====>>> SHARE PAGE FINISH  <<<===== */

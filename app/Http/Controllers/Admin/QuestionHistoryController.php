@@ -86,6 +86,9 @@ class QuestionHistoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $referrals = QuestionHistory::where('referral_id', $id)->select('id')->pluck('id')->toArray();
+        QuestionHistoryAnswer::wherein('question_history_id', $referrals)->orwhere('question_history_id', $id)->delete();
+        QuestionHistory::wherein('id', $referrals)->orwhere('id', $id)->delete();
+        return redirect()->route('history.index')->with('success', 'Müvəffəqiyyətlə silindi');
     }
 }

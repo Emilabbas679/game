@@ -26,10 +26,10 @@
                 <a href="{{$restart_link}}" class="reload_btn">Təkrar</a>
             </div>
             <div class="row-sh clearfix">
-                <a href="{{route('start')}}" class="reload_btn">Yenisini yarat</a>
+                <a href="{{route('start')}}" class="reload_btn">YENİSİNİ yarat</a>
             </div>
             <div class="row-sh clearfix">
-                <a href="{{route('result', $history->slug)}}" class="reload_btn">Nəticələr</a>
+                <a href="{{route('result', $history->slug)}}" class="reload_btn">Nətİcələr</a>
             </div>
         </div>
     </div>

@@ -18,16 +18,17 @@
             <div class="start-text">
                 <h1>
                     @if ($type == 'create')
-                    Salam. Suallara cavab verin və sizi nə qədər tanıdıqlarını öyrənin.
+                        SALAM. SUALLARA CAVAB VERİN VƏ SİZİ NƏ QƏDƏR TANIDIQLARINI ÖYRƏNİN.
                     @else
-                        Salam. Suallara cavab verin, görün {{$history->name}}'i nə qədər tanıyırsınız?
+                        SALAM. SUALLARA CAVAB VERIN, GÖRÜN {{ str_replace('i','İ', $history->name)}}'İ NƏ QƏDƏR TANIYIRSAN?
                     @endif
                 </h1>
             </div>
             <div class="start-click clearfix">
                 <form @if($type == 'create') action="{{route('start_post')}}" @else action="{{route('startCompetitionPost', $slug)}}" @endif method="post"  id="start_form" >
                     @csrf
-                    <input type="text" name="name" value="" placeholder="Adınız... "  id="start_iput">
+                     <div class="fill_area">Zəhmət olmazsa adınızı qeyd edin </div>
+                    <input type="text" name="name" value="" placeholder="Adınız... "  id="start_iput" autocomplete="off">
                     @if ($type == 'create')
                     <input type="hidden" name="type" value="create">
                     @else

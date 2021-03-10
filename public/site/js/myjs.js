@@ -20,9 +20,14 @@ function copyFunction() {
 	$("#start_form").submit(function(e){
         var strt_input = $("#start_iput").val();
 		if(strt_input == "") {
+			$("div.fill_area").css({"display":"block","visibility":"visible","opacity":"1"});
 			e.preventDefault();
 		}
+		
     });
+	$( document ).click(function() {
+		$("div.fill_area").css({"display":"none","visibility":"hidden","opacity":"0"});
+	});
 
 
 

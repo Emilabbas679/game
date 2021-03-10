@@ -32,7 +32,17 @@ class SiteController extends Controller
         if (!$history)
             abort(404);
         $results = QuestionHistory::where('referral_id', $history->id)->get();
+
         return view('result', compact('history', 'results'));
+    }
+
+    public function resultCompose($slug, $new_slug)
+    {
+        $history = QuestionHistory::where('slug', $slug)->where('referral_id', 0)->first();
+        if (!$history)
+            abort(404);
+        $result = QuestionHistory::where('referral_id', $history->id)->where('slug', $new_slug)->first();
+        return view('result-new', compact('history', 'result'));
     }
 
     public function share($slug, $type=null)
@@ -125,7 +135,7 @@ class SiteController extends Controller
             ];
         }
         QuestionHistoryAnswer::insert($data);
-        return redirect()->route('result',$slug);
+        return redirect()->route('result_compose',['slug'=>$slug,'new_slug'=>$slug_user]);
     }
 
     public function createCompetition(Request $request)
